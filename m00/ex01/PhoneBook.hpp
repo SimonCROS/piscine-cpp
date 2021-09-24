@@ -11,14 +11,20 @@ public:
 	PhoneBook( void );
 	~PhoneBook( void );
 
-	Contact		*getContacts( void ) const;
-	Contact		*addContact( void ) const;
-	Contact		*addContact( void ) const;
+	void	addContact( Contact contact );
+	void	showContact( int id ) const;
+	void	show( void ) const;
 
 private:
 
-	Contact		contacts[8];
-	int			size;
+	Contact		_contacts[8];
+	int			_index;
+	int			_size;
+
+	void	showEntry( std::string str ) const;
+	void	showHeader( bool splitColumns ) const;
+	void	showLine( int id, Contact contact, bool interline ) const;
+	void	showFooter( bool splitColumns ) const;
 
 };
 

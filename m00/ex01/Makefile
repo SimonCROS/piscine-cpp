@@ -5,13 +5,15 @@ NAME				= phonebook
 # Commands
 
 override CPPC		:= clang++
-override CFLAGS		:= -Wall -Wextra -Werror
+override CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
 override RM			:= rm -rf
 
 # Sources
 
 override SRCS		:=							\
 				main.cpp						\
+				Contact.cpp						\
+				PhoneBook.cpp					\
 
 override OBJS		:= $(SRCS:.cpp=.o)
 
@@ -23,7 +25,7 @@ all:		$(NAME)
 			$(CPPC) -c $< -o $@
 
 $(NAME):	$(OBJS)
-			$(CPPC) $(CFLAGS) -o $@ $(OBJS)
+			$(CPPC) $(CPPFLAGS) -o $@ $(OBJS)
 
 clean:
 			$(RM) $(OBJS)

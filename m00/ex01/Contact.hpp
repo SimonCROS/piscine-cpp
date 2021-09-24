@@ -8,7 +8,8 @@ class Contact {
 
 public:
 
-	Contact( std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
+	Contact( void );
+	Contact( std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret );
 	~Contact( void );
 
 	std::string	getFirstName( void ) const;
@@ -17,13 +18,15 @@ public:
 	std::string	getPhoneNumber( void ) const;
 	std::string	getDarkestSecret( void ) const;
 
+	static Contact	prompt( void );
+
 private:
 
-	std::string	firstName;
-	std::string	lastName;
-	std::string nickname;
-	std::string phoneNumber;
-	std::string darkestSecret;
+	std::string	_firstName;
+	std::string	_lastName;
+	std::string	_nickname;
+	std::string	_phoneNumber;
+	std::string	_darkestSecret;
 
 };
 

@@ -1,29 +1,20 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
 	std::string	line;
-	contact		contacts[8];
-	int			contact_amount;
+	PhoneBook	book;
 
-	contact_amount = 0;
 	while (getline(std::cin, line))
 	{
 		if (line == "ADD")
-		{
-			contacts[contact_amount] = (contact){
-
-			}
-			contact_amount++;
-		}
+			book.addContact(Contact::prompt());
 		else if (line == "SEARCH")
 		{
-			
+			book.show();
 		}
 		else if (line == "EXIT")
 			break ;
 	}
 	return 0;
 }
-
