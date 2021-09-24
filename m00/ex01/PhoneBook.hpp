@@ -22,9 +22,7 @@ private:
 	int			_size;
 
 	void	showEntry( std::string str ) const;
-	void	showHeader( bool splitColumns ) const;
 	void	showLine( int id, Contact contact, bool interline ) const;
-	void	showFooter( bool splitColumns ) const;
 
 };
 
