@@ -15,7 +15,7 @@ void	PhoneBook::show( void ) const {
 	Contact	contact;
 
 	for (int i = 0; i < this->_size; i++)
-		showLine(i, this->_contacts[i], i + 1 != this->_size);
+		showLine(i, this->_contacts[i]);
 }
 
 void	PhoneBook::showEntry( std::string str ) const {
@@ -27,7 +27,24 @@ void	PhoneBook::showEntry( std::string str ) const {
 	std::cout << str;
 }
 
-void	PhoneBook::showLine( int id, Contact contact, bool interline ) const {
+void	PhoneBook::showContact( int id ) const {
+	Contact	contact;
+
+	if (id >= this->_size)
+	{
+		std::cout << "This id does not exist" << std::endl;
+		return ;
+	}
+
+	contact = this->_contacts[id];
+	std::cout << "First name : " << contact.getFirstName() << std::endl;
+	std::cout << "Last name : " << contact.getLastName() << std::endl;
+	std::cout << "Nickname : " << contact.getNickname() << std::endl;
+	std::cout << "Phone number : " << contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret : " << contact.getDarkestSecret() << std::endl;
+}
+
+void	PhoneBook::showLine( int id, Contact contact ) const {
 	showEntry(std::to_string(id));
 	std::cout << "|";
 	showEntry(contact.getFirstName());

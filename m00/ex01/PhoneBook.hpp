@@ -22,7 +22,7 @@ private:
 	int			_size;
 
 	void	showEntry( std::string str ) const;
-	void	showLine( int id, Contact contact, bool interline ) const;
+	void	showLine( int id, Contact contact ) const;
 
 };
 
