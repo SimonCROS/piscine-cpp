@@ -1,7 +1,7 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 
-int main(int argc, char const *argv[]) {
+int main( void ) {
 	std::string	line;
 	PhoneBook	book;
 	int			id;

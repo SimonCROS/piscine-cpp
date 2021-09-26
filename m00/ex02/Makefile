@@ -1,6 +1,6 @@
 # Properties
 
-NAME				= phonebook
+NAME				= account
 
 # Commands
 
@@ -11,9 +11,8 @@ override RM			:= rm -rf
 # Sources
 
 override SRCS		:=							\
-				main.cpp						\
-				Contact.cpp						\
-				PhoneBook.cpp					\
+				tests.cpp						\
+				Account.cpp						\
 
 override OBJS		:= $(SRCS:.cpp=.o)
 

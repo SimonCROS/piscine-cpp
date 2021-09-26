@@ -5,7 +5,7 @@ NAME				= megaphone
 # Commands
 
 override CPPC		:= clang++
-override CFLAGS		:= -Wall -Wextra -Werror
+override CFLAGS		:= -Wall -Wextra -Werror -std=c++98
 override RM			:= rm -rf
 
 # Sources
@@ -20,7 +20,7 @@ override OBJS		:= $(SRCS:.cpp=.o)
 all:		$(NAME)
 
 %.o:		%.cpp
-			$(CPPC) -c $< -o $@
+			$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			$(CPPC) $(CFLAGS) -o $@ $(OBJS)

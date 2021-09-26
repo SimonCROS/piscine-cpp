@@ -1,7 +1,7 @@
 #include "PhoneBook.hpp"
 #include <iostream>
 
-PhoneBook::PhoneBook( void ) : _size(0), _index(0) {}
+PhoneBook::PhoneBook( void ) : _index(0), _size(0) {}
 
 PhoneBook::~PhoneBook( void ) {}
 
