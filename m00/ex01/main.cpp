@@ -22,8 +22,8 @@ int main( void ) {
 				std::cout << "Please, enter a valid number" << std::endl;
 				std::cin.clear();
         		std::cin.ignore(10000, '\n');
-				std::cin >> id;
 			}
+			std::cin.ignore(10000, '\n');
 			book.showContact(id);
 		}
 		else if (line == "EXIT")
