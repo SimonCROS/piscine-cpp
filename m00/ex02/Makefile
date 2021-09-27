@@ -14,13 +14,16 @@ override SRCS		:=							\
 				tests.cpp						\
 				Account.cpp						\
 
+override HEADERS	:=							\
+				Account.hpp						\
+
 override OBJS		:= $(SRCS:.cpp=.o)
 
 # Rules
 
 all:		$(NAME)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS)
 			$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)

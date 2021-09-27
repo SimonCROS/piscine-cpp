@@ -52,7 +52,5 @@ void	PhoneBook::showLine( int id, Contact contact ) const {
 	showEntry(contact.getLastName());
 	std::cout << "|";
 	showEntry(contact.getNickname());
-	std::cout << "|";
-	showEntry(contact.getPhoneNumber());
 	std::cout << std::endl;
 }

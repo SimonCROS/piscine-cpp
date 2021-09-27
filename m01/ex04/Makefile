@@ -12,14 +12,6 @@ override RM			:= rm -rf
 
 override SRCS		:=							\
 				main.cpp						\
-				HumanA.cpp						\
-				HumanB.cpp						\
-				Weapon.cpp						\
-
-override HEADERS	:=							\
-				HumanA.hpp						\
-				HumanB.hpp						\
-				Weapon.hpp						\
 
 override OBJS		:= $(SRCS:.cpp=.o)
 
@@ -27,7 +19,7 @@ override OBJS		:= $(SRCS:.cpp=.o)
 
 all:		$(NAME)
 
-%.o:		%.cpp $(HEADERS)
+%.o:		%.cpp
 			$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)

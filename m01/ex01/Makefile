@@ -15,13 +15,16 @@ override SRCS		:=							\
 				Zombie.cpp						\
 				ZombieHorde.cpp					\
 
+override HEADERS	:=							\
+				Zombie.hpp						\
+
 override OBJS		:= $(SRCS:.cpp=.o)
 
 # Rules
 
 all:		$(NAME)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS)
 			$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)

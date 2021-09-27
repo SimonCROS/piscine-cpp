@@ -15,13 +15,17 @@ override SRCS		:=							\
 				Contact.cpp						\
 				PhoneBook.cpp					\
 
+override HEADERS	:=							\
+				Contact.hpp						\
+				PhoneBook.hpp					\
+
 override OBJS		:= $(SRCS:.cpp=.o)
 
 # Rules
 
 all:		$(NAME)
 
-%.o:		%.cpp
+%.o:		%.cpp $(HEADERS)
 			$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)

@@ -32,15 +32,20 @@ Contact		Contact::prompt( void ) {
 	Contact	contact;
 
 	std::cout << "First name : ";
-	getline(std::cin, contact._firstName);
+	if (!getline(std::cin, contact._firstName))
+		exit(0);
 	std::cout << "Last name : ";
-	getline(std::cin, contact._lastName);
+	if (!getline(std::cin, contact._lastName))
+		exit(0);
 	std::cout << "Nickname : ";
-	getline(std::cin, contact._nickname);
+	if (!getline(std::cin, contact._nickname))
+		exit(0);
 	std::cout << "Phone number : ";
-	getline(std::cin, contact._phoneNumber);
+	if (!getline(std::cin, contact._phoneNumber))
+		exit(0);
 	std::cout << "Darkest secret : ";
-	getline(std::cin, contact._darkestSecret);
+	if (!getline(std::cin, contact._darkestSecret))
+		exit(0);
 
 	return contact;
 }
