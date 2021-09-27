@@ -44,6 +44,11 @@ void	PhoneBook::showContact( int id ) const {
 	std::cout << "Darkest secret : " << contact.getDarkestSecret() << std::endl;
 }
 
+bool	PhoneBook::isEmpty( void )
+{
+	return !this->_size;
+}
+
 void	PhoneBook::showLine( int id, Contact contact ) const {
 	showEntry(std::to_string(id));
 	std::cout << "|";

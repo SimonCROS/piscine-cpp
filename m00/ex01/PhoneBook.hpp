@@ -14,6 +14,7 @@ public:
 	void	addContact( Contact contact );
 	void	showContact( int id ) const;
 	void	show( void ) const;
+	bool	isEmpty( void );
 
 private:
 

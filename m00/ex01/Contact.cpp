@@ -28,24 +28,27 @@ std::string Contact::getDarkestSecret( void ) const {
 	return this->_darkestSecret;
 }
 
-Contact		Contact::prompt( void ) {
-	Contact	contact;
+static void	prompt_line( std::string question, std::string *buffer )
+{
+	while (1)
+	{
+		std::cout << question;
+		if (!getline(std::cin, *buffer))
+			exit(0);
+		if (!buffer->empty())
+			break ;
+		std::cout << "The field must not be empty. ";
+	}
+}
 
-	std::cout << "First name : ";
-	if (!getline(std::cin, contact._firstName))
-		exit(0);
-	std::cout << "Last name : ";
-	if (!getline(std::cin, contact._lastName))
-		exit(0);
-	std::cout << "Nickname : ";
-	if (!getline(std::cin, contact._nickname))
-		exit(0);
-	std::cout << "Phone number : ";
-	if (!getline(std::cin, contact._phoneNumber))
-		exit(0);
-	std::cout << "Darkest secret : ";
-	if (!getline(std::cin, contact._darkestSecret))
-		exit(0);
+Contact	Contact::prompt( void ) {
+	Contact contact;
+
+	prompt_line("First name : ", &(contact._firstName));
+	prompt_line("Last name : ", &(contact._lastName));
+	prompt_line("Nickname : ", &(contact._nickname));
+	prompt_line("Phone number : ", &(contact._phoneNumber));
+	prompt_line("Darkest secret : ", &(contact._darkestSecret));
 
 	return contact;
 }
