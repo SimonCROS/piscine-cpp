@@ -1,4 +1,3 @@
-#pragma once
 #ifndef __ZOMBIE_H__
 # define __ZOMBIE_H__
 
