@@ -5,7 +5,7 @@ NAME				= horde
 # Commands
 
 override CPPC		:= clang++
-override CFLAGS		:= -Wall -Wextra -Werror -std=c++98
+override CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
 override RM			:= rm -rf
 
 # Sources
@@ -28,7 +28,7 @@ all:		$(NAME)
 			$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
-			$(CPPC) $(CFLAGS) -o $@ $(OBJS)
+			$(CPPC) $(CPPFLAGS) -o $@ $(OBJS)
 
 clean:
 			$(RM) $(OBJS)
