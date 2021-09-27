@@ -34,21 +34,11 @@ void	Karen::error( void )
 
 void	Karen::complain( std::string level )
 {
-	switch (level[0])
-	{
-	case 'D':
-		(this->*_functs[0])();
-		break;
-	case 'I':
-		(this->*_functs[1])();
-		break;
-	case 'W':
-		(this->*_functs[2])();
-		break;
-	case 'E':
-		(this->*_functs[3])();
-		break;
-	default:
-		break;
-	}
+	static const std::string types[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+	unsigned long	i = 0;
+
+	while (types[i] != level && i < sizeof(types))
+		i++;
+	if (i != sizeof(types))
+		(this->*_functs[i])();
 }
