@@ -30,7 +30,7 @@ void	PhoneBook::showEntry( std::string str ) const {
 void	PhoneBook::showContact( int id ) const {
 	Contact	contact;
 
-	if (id >= this->_size)
+	if (id < 0 || id >= this->_size)
 	{
 		std::cout << "This id does not exist" << std::endl;
 		return ;
