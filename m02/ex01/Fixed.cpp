@@ -61,5 +61,3 @@ std::ostream &	operator<<( std::ostream & o, Fixed const & i )
 {
 	return o << i.toFloat();
 }
-
-int		Fixed::_fraction = 8;
