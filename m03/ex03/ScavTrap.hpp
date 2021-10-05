@@ -6,10 +6,10 @@
 
 class ScavTrap : public virtual ClapTrap
 {
-protected:
-	ScavTrap( void );
+private:
 
 public:
+	ScavTrap( void );
 	ScavTrap( std::string name );
 	ScavTrap( ScavTrap const & src );
 	~ScavTrap( void );
@@ -18,7 +18,5 @@ public:
 
 	ScavTrap &	operator=( ScavTrap const & rhs );
 };
-
-std::ostream &	operator<<( std::ostream & o, ScavTrap const & i );
 
 #endif

@@ -5,14 +5,13 @@
 # include "FragTrap.hpp"
 # include <iostream>
 
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
-	DiamondTrap( void );
-
-	std::string	name;
+	std::string	_name;
 
 public:
+	DiamondTrap( void );
 	DiamondTrap( std::string name );
 	DiamondTrap( DiamondTrap const & src );
 	~DiamondTrap( void );
@@ -21,7 +20,5 @@ public:
 
 	DiamondTrap &	operator=( DiamondTrap const & rhs );
 };
-
-std::ostream &	operator<<( std::ostream & o, DiamondTrap const & i );
 
 #endif

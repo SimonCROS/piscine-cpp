@@ -6,10 +6,10 @@
 
 class FragTrap : public virtual ClapTrap
 {
-protected:
-	FragTrap( void );
+private:
 
 public:
+	FragTrap( void );
 	FragTrap( std::string name );
 	FragTrap( FragTrap const & src );
 	~FragTrap( void );
@@ -18,7 +18,5 @@ public:
 
 	FragTrap &	operator=( FragTrap const & rhs );
 };
-
-std::ostream &	operator<<( std::ostream & o, FragTrap const & i );
 
 #endif

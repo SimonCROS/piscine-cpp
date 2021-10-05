@@ -1,21 +1,32 @@
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include <iostream>
 
-int main(void) {
-	ClapTrap luffy("Luffy");
-	ScavTrap cow("the_cow");
-	FragTrap sheep("the_sheep");
+static void	section( std::string title )
+{
+	std::cout << std::endl << "--------------- " << title << " ---------------" << std::endl;
+}
 
-	luffy.attack("the_cow");
-	cow.takeDamage(luffy.getAttackDamage());
-	cow.beRepaired(50);
-	cow.attack("luffy");
-	luffy.takeDamage(cow.getAttackDamage());
-	cow.guardGate();
-	sheep.attack("the_cow");
-	cow.takeDamage(sheep.getAttackDamage());
+int main( void ) {
+	section("Cow 1");
+	FragTrap cow("A cow");
+	{
+		cow.attack("an electric fence");
+		cow.takeDamage(10);
+		cow.attack("grass");
+		cow.beRepaired(10);
+		cow.highFivesGuys();
+	}
+	section("Cow 2");
+	{
+		FragTrap cow2(cow);
+	}
+	section("Cow 3");
+	{
+		FragTrap cow3;
+		cow3 = cow;
+	}
+	section("Cow 1");
 	return 0;
 }
 

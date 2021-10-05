@@ -2,13 +2,11 @@
 #include <iostream>
 
 int main(void) {
-	ClapTrap luffy("Luffy");
-	ClapTrap cow("a cow");
+	ClapTrap cow("A cow");
 
-	luffy.attack("a cow");
-	cow.takeDamage(luffy.getAttackDamage());
-	cow.beRepaired(90);
-	cow.attack("luffy");
-	luffy.takeDamage(cow.getAttackDamage());
+	cow.attack("an electric fence");
+	cow.takeDamage(10);
+	cow.attack("grass");
+	cow.beRepaired(10);
 	return 0;
 }

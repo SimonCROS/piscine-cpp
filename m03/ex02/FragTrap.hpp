@@ -7,9 +7,9 @@
 class FragTrap : public ClapTrap
 {
 private:
-	FragTrap( void );
 
 public:
+	FragTrap( void );
 	FragTrap( std::string name );
 	FragTrap( FragTrap const & src );
 	~FragTrap( void );
@@ -18,7 +18,5 @@ public:
 
 	FragTrap &	operator=( FragTrap const & rhs );
 };
-
-std::ostream &	operator<<( std::ostream & o, FragTrap const & i );
 
 #endif

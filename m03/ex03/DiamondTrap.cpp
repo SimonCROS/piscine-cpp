@@ -1,37 +1,33 @@
 #include "DiamondTrap.hpp"
-#include <cmath>
 #include <iostream>
 
-DiamondTrap::DiamondTrap( void ) : ClapTrap(), FragTrap(), ScavTrap() {}
-
-DiamondTrap::DiamondTrap( DiamondTrap const & src ) : ClapTrap(src), FragTrap(src), ScavTrap(src)
-{
-	std::cout << "DiamondTrap | " << "Copy constructor called" << std::endl;
+DiamondTrap::DiamondTrap( void ) : ClapTrap(), ScavTrap(), FragTrap() {
+	std::cout << "\033[34mDiamondTrap\033[0m | " << "Default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name", 100, 100, 30), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap( DiamondTrap const & src ) : ClapTrap(src), ScavTrap(src), FragTrap(src)
 {
-	std::cout << "DiamondTrap | " << name << " born" << std::endl;
+	std::cout << "\033[34mDiamondTrap\033[0m | " << "Copy constructor called" << std::endl;
+}
+
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
+{
+	std::cout << "\033[34mDiamondTrap\033[0m | " << name << " is born" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap( void )
 {
-	std::cout << "DiamondTrap | " << this->getName() << " died" << std::endl;
+	std::cout << "\033[34mDiamondTrap\033[0m | " << this->_name << " died" << std::endl;
 }
 
 void		DiamondTrap::whoAmI( void )
 {
-	std::cout << this->_name << " " << std::endl;
+	std::cout << "\033[34mDiamondTrap\033[0m | " << "The real name of " << this->_name << " is " << ClapTrap::_name << " and have " << this->_hitPoints << " hp, " << this->_energyPoints << " energy and " << this->_attackDamage << " of attack damage." << std::endl;
 }
 
 DiamondTrap &	DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	std::cout << "DiamondTrap | " << "Assignation operator called" << std::endl;
+	std::cout << "\033[34mDiamondTrap\033[0m | " << "Assignation operator called" << std::endl;
 	ClapTrap::operator=(rhs);
 	return *this;
-}
-
-std::ostream &	operator<<( std::ostream & o, DiamondTrap const & i )
-{
-	return o << i.getName() << "(hp:" << i.getLife() << ",ad:" << i.getAttackDamage() << ",energy:" << i.getEnergy() << ")";
 }

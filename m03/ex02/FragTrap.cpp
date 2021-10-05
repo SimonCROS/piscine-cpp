@@ -1,37 +1,33 @@
 #include "FragTrap.hpp"
-#include <cmath>
 #include <iostream>
 
-FragTrap::FragTrap( void ) : ClapTrap() {}
+FragTrap::FragTrap( void ) : ClapTrap() {
+	std::cout << "\033[32mFragTrap\033[0m | " << "Default constructor called" << std::endl;
+}
 
 FragTrap::FragTrap( FragTrap const & src ) : ClapTrap(src)
 {
-	std::cout << "FragTrap | " << "Copy constructor called" << std::endl;
+	std::cout << "\033[32mFragTrap\033[0m | " << "Copy constructor called" << std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 100, 30)
+FragTrap::FragTrap( std::string name ) : ClapTrap(name + "_clap_name", 100, 100, 30)
 {
-	std::cout << "FragTrap | " << this->getName() << " born" << std::endl;
+	std::cout << "\033[32mFragTrap\033[0m | " << this->_name << " is born" << std::endl;
 }
 
 FragTrap::~FragTrap( void )
 {
-	std::cout << "FragTrap | " << this->getName() << " died" << std::endl;
+	std::cout << "\033[32mFragTrap\033[0m | " << this->_name << " died" << std::endl;
 }
 
 void		FragTrap::highFivesGuys( void )
 {
-	std::cout << "FragTrap | " << this->getName() << " say \"high fives guys !\"" << std::endl;
+	std::cout << "\033[32mFragTrap\033[0m | " << this->_name << " say \"high fives guys !\"" << std::endl;
 }
 
 FragTrap &	FragTrap::operator=( FragTrap const & rhs )
 {
-	std::cout << "FragTrap | " << "Assignation operator called" << std::endl;
+	std::cout << "\033[32mFragTrap\033[0m | " << "Assignation operator called" << std::endl;
 	ClapTrap::operator=(rhs);
 	return *this;
-}
-
-std::ostream &	operator<<( std::ostream & o, FragTrap const & i )
-{
-	return o << i.getName() << "(hp:" << i.getLife() << ",ad:" << i.getAttackDamage() << ",energy:" << i.getEnergy() << ")";
 }
