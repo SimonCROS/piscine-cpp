@@ -35,5 +35,3 @@ void	Fixed::setRawBits( int raw )
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
-
-int	Fixed::_fraction = 8;
