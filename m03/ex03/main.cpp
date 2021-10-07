@@ -10,6 +10,7 @@ int main( void ) {
 	section("Cow 1");
 	DiamondTrap cow("Cowcow");
 	{
+		cow.whoAmI();
 		cow.attack("an electric fence");
 		cow.takeDamage(10);
 		cow.attack("grass");

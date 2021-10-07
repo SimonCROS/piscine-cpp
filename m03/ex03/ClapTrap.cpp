@@ -32,7 +32,7 @@ void	ClapTrap::attack( std::string target )
 	if (this->_energyPoints >= this->_attackDamage)
 	{
 		this->_energyPoints -= this->_attackDamage;
-		std::cout << "ClapTrap | " << this->_name << " attack " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap | " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 	}
 	else
 		std::cout << "ClapTrap | " << "Not enough energy" << std::endl;
@@ -43,7 +43,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	if (this->_hitPoints >= amount)
 	{
 		this->_hitPoints -= amount;
-		std::cout << "ClapTrap | " << this->_name << " take " << amount << " damages" << std::endl;
+		std::cout << "ClapTrap | " << this->_name << " takes " << amount << " damages" << std::endl;
 	}
 	else
 	{
