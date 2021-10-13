@@ -9,9 +9,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string		_name;
-	using			FragTrap::_hitPoints;
-	using			ScavTrap::_energyPoints;
-	using			FragTrap::_attackDamage;
 
 public:
 	DiamondTrap( void );

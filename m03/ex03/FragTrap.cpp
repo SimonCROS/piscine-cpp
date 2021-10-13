@@ -1,11 +1,11 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap( void ) : ClapTrap("Clap") {
+FragTrap::FragTrap( void ) : ClapTrap("Clap", 100, 100, 30) {
 	std::cout << "\033[32mFragTrap\033[0m | " << "Default constructor called" << std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	// this->_hitPoints = 100;
+	// this->_energyPoints = 100;
+	// this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap( FragTrap const & src ) : ClapTrap(src)
@@ -13,7 +13,7 @@ FragTrap::FragTrap( FragTrap const & src ) : ClapTrap(src)
 	std::cout << "\033[32mFragTrap\033[0m | " << "Copy constructor called" << std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 50, 20)
+FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 100, 30)
 {
 	std::cout << "\033[32mFragTrap\033[0m | " << this->_name << " is born" << std::endl;
 }
