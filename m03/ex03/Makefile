@@ -21,7 +21,7 @@ override HEADERS	:=							\
 				ClapTrap.hpp					\
 				ScavTrap.hpp					\
 				FragTrap.hpp					\
-				DiamondTrap.cpp					\
+				DiamondTrap.hpp					\
 
 override OBJS		:= $(SRCS:.cpp=.o)
 
