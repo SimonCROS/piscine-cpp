@@ -20,13 +20,15 @@ int main( void ) {
 	section("Cow 2");
 	{
 		DiamondTrap cow2(cow);
+		cow.whoAmI();
 	}
 	section("Cow 3");
 	{
 		DiamondTrap cow3;
+		cow.whoAmI();
 		cow3 = cow;
+		cow.whoAmI();
 	}
 	section("Cow 1");
 	return 0;
 }
-
