@@ -1,7 +1,8 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap( void ) : ClapTrap("Clap", 100, 50, 20) {
+ScavTrap::ScavTrap( void ) : ClapTrap("Scav", 100, 50, 20)
+{
 	std::cout << "\033[31mScavTrap\033[0m | " << "Default constructor called" << std::endl;
 }
 

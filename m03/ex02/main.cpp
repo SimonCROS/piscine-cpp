@@ -1,4 +1,3 @@
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include <iostream>
 
@@ -29,4 +28,3 @@ int main( void ) {
 	section("Cow 1");
 	return 0;
 }
-

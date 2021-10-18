@@ -28,4 +28,3 @@ int main( void ) {
 	section("Cow 1");
 	return 0;
 }
-

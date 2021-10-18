@@ -1,7 +1,8 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap( void ) {
+ClapTrap::ClapTrap( void ) : _name("Clap")
+{
 	std::cout << "ClapTrap | " << "Default constructor called" << std::endl;
 }
 
