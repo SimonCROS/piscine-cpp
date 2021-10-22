@@ -1,21 +1,29 @@
-#ifndef __ICHARACTER_H__
-# define __ICHARACTER_H__
+#ifndef __CHARACTER_H__
+# define __CHARACTER_H__
 
 # include <iostream>
 
-# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
-protected:
+private:
 	AMateria*	inventory[4];
+	std::string const	name;
+
+	Character();
 
 public:
-	virtual ~Character() {}
+	Character(std::string const & name);
+	Character(Character const & src);
+	virtual ~Character();
+	virtual Character &	operator=(Character const & rhs);
+
 	virtual std::string const & getName() const;
+
 	virtual void equip(AMateria* m);
 	virtual void unequip(int idx);
-	virtual void use(int idx, Character& target);
+	virtual void use(int idx, ICharacter& target);
 };
 
 #endif

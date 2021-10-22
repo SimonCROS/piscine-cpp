@@ -1,6 +1,6 @@
 # Properties
 
-NAME				= animals
+NAME				= materias
 
 # Commands
 
@@ -13,11 +13,17 @@ override RM			:= rm -rf
 override SRCS		:=							\
 				main.cpp						\
 				AMateria.cpp					\
+				Cure.cpp						\
+				Ice.cpp							\
+				Character.cpp					\
 				MateriaSource.cpp				\
 
 override HEADERS	:=							\
 				AMateria.hpp					\
+				Cure.hpp						\
+				Ice.hpp							\
 				ICharacter.hpp					\
+				Character.hpp					\
 				IMateriaSource.hpp				\
 				MateriaSource.hpp				\
 
