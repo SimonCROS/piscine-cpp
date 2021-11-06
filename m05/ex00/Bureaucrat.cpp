@@ -13,7 +13,11 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name), grade(src.grade)
 
 Bureaucrat::~Bureaucrat() {}
 
-const std::string &Bureaucrat::getName() const {
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat &src) {
+    this->grade = src.grade;
+}
+
+const std::string & Bureaucrat::getName() const {
     return this->name;
 }
 
@@ -33,15 +37,15 @@ void Bureaucrat::demote() {
     this->grade++;
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() {
+const char * Bureaucrat::GradeTooHighException::what() const throw() {
     return "Grade too high.";
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw() {
+const char * Bureaucrat::GradeTooLowException::what() const throw() {
     return "Grade too low.";
 }
 
-std::ostream &operator<<(std::ostream &o, const Bureaucrat &i)
+std::ostream & operator<<(std::ostream &o, const Bureaucrat &i)
 {
     return o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
 }
