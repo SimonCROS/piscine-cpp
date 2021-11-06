@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -20,6 +23,7 @@ public:
     void demote();
     const std::string &getName() const;
     unsigned short getGrade() const;
+    void signForm(Form &form);
 
     class GradeTooHighException : public std::exception {
     public:
