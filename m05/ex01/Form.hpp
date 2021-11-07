@@ -1,5 +1,5 @@
 #ifndef FORM_H
-# define FORM_H
+#define FORM_H
 
 #include <iostream>
 #include <string>
@@ -16,7 +16,7 @@ private:
 
     Form();
 public:
-    Form(std::string name, unsigned short gradeToSign, unsigned short gradeToExecute);
+    Form(const std::string &name, unsigned short gradeToSign, unsigned short gradeToExecute);
     Form(const Form &src);
     ~Form();
     Form &operator=(const Form &src);

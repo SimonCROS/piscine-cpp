@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat() : grade(150) {}
 
-Bureaucrat::Bureaucrat(std::string name, unsigned short grade) : name(name), grade(grade) {
+Bureaucrat::Bureaucrat(const std::string &name, unsigned short grade) : name(name), grade(grade) {
     if (grade < 1)
         throw Bureaucrat::GradeTooLowException();
     if (grade > 150)

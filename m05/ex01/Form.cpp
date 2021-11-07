@@ -2,7 +2,7 @@
 
 Form::Form() : gradeToSign(150), gradeToExecute(150), _signed(false) {}
 
-Form::Form(std::string name, unsigned short gradeToSign, unsigned short gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute), _signed(false) {
+Form::Form(const std::string &name, unsigned short gradeToSign, unsigned short gradeToExecute) : name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute), _signed(false) {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw Form::GradeTooLowException();
     if (gradeToSign > 150 || gradeToExecute > 150)

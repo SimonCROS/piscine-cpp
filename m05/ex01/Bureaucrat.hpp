@@ -1,5 +1,5 @@
 #ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#define BUREAUCRAT_H
 
 #include <iostream>
 #include <string>
@@ -14,7 +14,7 @@ private:
 
     Bureaucrat();
 public:
-    Bureaucrat(std::string name, unsigned short grade);
+    Bureaucrat(const std::string &name, unsigned short grade);
     Bureaucrat(const Bureaucrat &src);
     ~Bureaucrat();
     Bureaucrat &operator=(const Bureaucrat &src);
@@ -23,7 +23,7 @@ public:
     void demote();
     const std::string &getName() const;
     unsigned short getGrade() const;
-    void signForm(Form &form);
+    void signForm(Form &form) const;
 
     class GradeTooHighException : public std::exception {
     public:

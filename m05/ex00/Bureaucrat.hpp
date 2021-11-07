@@ -1,8 +1,11 @@
 #ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#define BUREAUCRAT_H
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -11,7 +14,7 @@ private:
 
     Bureaucrat();
 public:
-    Bureaucrat(std::string name, unsigned short grade);
+    Bureaucrat(const std::string &name, unsigned short grade);
     Bureaucrat(const Bureaucrat &src);
     ~Bureaucrat();
     Bureaucrat &operator=(const Bureaucrat &src);
