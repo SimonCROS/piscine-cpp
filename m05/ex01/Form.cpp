@@ -13,12 +13,12 @@ Form::Form(const Form &src) : name(src.name), gradeToSign(src.gradeToSign), grad
 
 Form::~Form() {}
 
-Form & Form::operator=(const Form &src) {
-    this->_signed = src._signed;
+Form &Form::operator=(const Form &rhs) {
+    this->_signed = rhs._signed;
     return *this;
 }
 
-const std::string & Form::getName() const {
+const std::string &Form::getName() const {
     return this->name;
 }
 
@@ -40,15 +40,15 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
     this->_signed = true;
 }
 
-const char * Form::GradeTooHighException::what() const throw() {
+const char *Form::GradeTooHighException::what() const throw() {
     return "Grade too high.";
 }
 
-const char * Form::GradeTooLowException::what() const throw() {
+const char *Form::GradeTooLowException::what() const throw() {
     return "Grade too low.";
 }
 
-std::ostream & operator<<(std::ostream &o, const Form &i)
+std::ostream &operator<<(std::ostream &o, const Form &i)
 {
     return o << i.getName() << ", formulaire " << (i.isSigned() ? "signé" : "non signé") << " de niveau " << i.getGradeToExecute() << " pouvant être signe par les bureaucrates de niveau " << i.getGradeToSign() << ".";
 }

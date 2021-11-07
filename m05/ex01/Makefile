@@ -13,11 +13,11 @@ override RM			:= rm -rf
 override SRCS		:=							\
 				main.cpp						\
 				Bureaucrat.cpp					\
-				Form.cpp    					\
+				Form.cpp						\
 
 override HEADERS	:=							\
 				Bureaucrat.hpp					\
-				Form.hpp    					\
+				Form.hpp						\
 
 override OBJS		:= $(SRCS:.cpp=.o)
 

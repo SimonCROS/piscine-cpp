@@ -19,7 +19,7 @@ public:
     Form(const std::string &name, unsigned short gradeToSign, unsigned short gradeToExecute);
     Form(const Form &src);
     ~Form();
-    Form &operator=(const Form &src);
+    Form &operator=(const Form &rhs);
 
     const std::string &getName() const;
     bool isSigned() const;
