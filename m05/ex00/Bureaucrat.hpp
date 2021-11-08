@@ -20,6 +20,7 @@ public:
     void demote();
     const std::string &getName() const;
     unsigned short getGrade() const;
+    void setGrade(unsigned short grade);
 
     class GradeTooHighException : public std::exception {
     public:

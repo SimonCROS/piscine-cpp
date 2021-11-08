@@ -23,6 +23,7 @@ public:
     void demote();
     const std::string &getName() const;
     unsigned short getGrade() const;
+    void setGrade(unsigned short grade);
     void signForm(Form &form) const;
     void executeForm(const Form &form) const;
 
