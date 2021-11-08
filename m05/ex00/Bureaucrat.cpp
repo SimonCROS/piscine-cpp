@@ -26,6 +26,10 @@ unsigned short Bureaucrat::getGrade() const {
     return this->grade;
 }
 
+void Bureaucrat::setGrade(unsigned short grade) {
+    this->grade = grade;
+}
+
 void Bureaucrat::promote() {
     if (this->grade == 1)
         throw Bureaucrat::GradeTooLowException();
