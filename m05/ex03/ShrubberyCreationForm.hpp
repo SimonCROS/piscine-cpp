@@ -16,6 +16,8 @@ public:
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 
     virtual void run() const;
+
+    static Form *create(const std::string &target);
 };
 
 #endif

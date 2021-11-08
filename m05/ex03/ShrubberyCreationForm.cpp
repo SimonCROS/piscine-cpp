@@ -38,3 +38,7 @@ void ShrubberyCreationForm::run() const {
         ofs.close();
     }
 }
+
+Form *ShrubberyCreationForm::create(const std::string &target) {
+    return new ShrubberyCreationForm(target);
+}

@@ -16,3 +16,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 void PresidentialPardonForm::run() const {
     std::cout << this->getTarget() << " a été pardonnée par Zafod Beeblebrox" << std::endl;
 }
+
+Form *PresidentialPardonForm::create(const std::string &target) {
+    return new PresidentialPardonForm(target);
+}

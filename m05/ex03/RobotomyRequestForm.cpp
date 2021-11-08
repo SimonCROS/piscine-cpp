@@ -22,3 +22,7 @@ void RobotomyRequestForm::run() const {
     else
         std::cout << this->getTarget() << " : robotomization échouée." << std::endl;
 }
+
+Form *RobotomyRequestForm::create(const std::string &target) {
+    return new RobotomyRequestForm(target);
+}

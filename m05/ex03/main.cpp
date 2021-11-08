@@ -1,18 +1,18 @@
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-    Intern i0;
+    Bureaucrat simon("Simon", 1);
+    Intern someRandomIntern;
 
-    i0.makeForm("robotomy request", "robotomy request");
-    i0.makeForm("robotomy request", "robotOMYrequest");
-    i0.makeForm("robotomy request", "robotomity reqest");
-    i0.makeForm("robotomy request", "robotomity pardon");
-    i0.makeForm("robotomy request", "robotomity");
-    i0.makeForm("robotomy request", "pardon");
-    i0.makeForm("robotomy request", "request");
+    Form *form = someRandomIntern.makeForm("robotomy request", "Bender");
+
+    simon.signForm(*form);
+    simon.executeForm(*form);
+
+    delete form;
+
+    Form *nullForm = someRandomIntern.makeForm("null form", "Bender");
+    delete nullForm;
 }

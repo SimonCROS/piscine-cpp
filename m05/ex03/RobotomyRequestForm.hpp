@@ -16,6 +16,8 @@ public:
     RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 
     virtual void run() const;
+
+    static Form *create(const std::string &target);
 };
 
 #endif

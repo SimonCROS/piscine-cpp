@@ -16,6 +16,8 @@ public:
     PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
 
     virtual void run() const;
+
+    static Form *create(const std::string &target);
 };
 
 #endif
