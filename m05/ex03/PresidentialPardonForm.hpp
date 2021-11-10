@@ -9,13 +9,13 @@
 class PresidentialPardonForm : public Form {
 private:
     PresidentialPardonForm();
+protected:
+    virtual void run() const;
 public:
     PresidentialPardonForm(const std::string target);
     PresidentialPardonForm(const PresidentialPardonForm &src);
     ~PresidentialPardonForm();
     PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
-
-    virtual void run() const;
 
     static Form *create(const std::string &target);
 };

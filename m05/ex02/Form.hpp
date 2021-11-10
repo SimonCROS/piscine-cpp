@@ -16,6 +16,7 @@ private:
     bool _signed;
 protected:
     Form();
+    virtual void run() const = 0;
 public:
     Form(const std::string &name, const std::string &target, unsigned short gradeToSign, unsigned short gradeToExecute);
     Form(const Form &src);
@@ -29,7 +30,6 @@ public:
     unsigned short getGradeToExecute() const;
     void beSigned(const Bureaucrat &bureaucrat);
     void execute(const Bureaucrat &executor) const;
-    virtual void run() const = 0;
 
     class GradeTooHighException : public std::exception {
     public:

@@ -20,5 +20,6 @@ Form *Intern::makeForm(const std::string &form, const std::string &target) const
         if (type.type == form)
             return type.builder(target);
     }
+    std::cout << "Désolé monsieur, je ne connais pas ce formulaire..." << std::endl;
     return (NULL);
 }

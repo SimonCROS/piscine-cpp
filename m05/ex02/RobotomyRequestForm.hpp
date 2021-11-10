@@ -9,13 +9,15 @@
 class RobotomyRequestForm : public Form {
 private:
     RobotomyRequestForm();
+protected:
+    virtual void run() const;
 public:
     RobotomyRequestForm(const std::string target);
     RobotomyRequestForm(const RobotomyRequestForm &src);
     ~RobotomyRequestForm();
     RobotomyRequestForm &operator=(const RobotomyRequestForm &rhs);
 
-    virtual void run() const;
+    static Form *create(const std::string &target);
 };
 
 #endif

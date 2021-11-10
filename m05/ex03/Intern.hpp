@@ -20,6 +20,4 @@ struct form_type {
     Form *(*builder)(const std::string &);
 };
 
-std::ostream &operator<<(std::ostream &o, const Intern &i);
-
 #endif
