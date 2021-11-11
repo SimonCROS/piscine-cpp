@@ -2,7 +2,6 @@
 #include <string>
 #include <cmath>
 #include <climits>
-#include <cfloat>
 #include <iomanip>
 
 double to_double(const std::string &s) {
