@@ -5,7 +5,7 @@ NAME				= cast
 # Commands
 
 override CPPC		:= clang++
-override CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98
+override CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic-errors
 override RM			:= rm -rf
 
 # Sources
