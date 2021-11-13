@@ -24,6 +24,7 @@ public:
     }
 
     Array(const Array &src) {
+        this->data = NULL;
         this->operator=(src);
     }
 
@@ -34,6 +35,7 @@ public:
     Array &operator=(const Array &rhs) {
         this->_size = rhs._size;
 
+        delete [] data;
         this->data = new T[this->_size];
         for (unsigned int i = 0; i < this->_size; ++i)
             this->data[i] = rhs[i];
