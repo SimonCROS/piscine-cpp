@@ -25,10 +25,10 @@ void Span::addNumber(int number) {
 }
 
 int Span::longestSpan() const {
-    int min, max;
-
     if (this->content.size() < 2)
         throw std::out_of_range("Need at least two elements");
+
+    int min, max;
 
     min = *std::min_element(this->content.begin(), this->content.end());
     max = *std::max_element(this->content.begin(), this->content.end());
@@ -37,15 +37,15 @@ int Span::longestSpan() const {
 }
 
 int Span::shortestSpan() const {
-    int shortest = INT_MAX;
-    std::vector<int>::iterator i;
-    std::vector<int>::iterator j;
-
     if (this->content.size() < 2)
         throw std::out_of_range("Need at least two elements");
 
-    for(i = this->content.begin(); i != this->content.end(); ++i) {
-        for (j = this->content.begin(); j != this->content.end(); ++j)
+    int shortest = INT_MAX;
+    std::vector<int>::const_iterator i;
+    std::vector<int>::const_iterator j;
+
+    for(i = this->content.begin(); i != this->content.end() - 1; ++i)
+        for (j = i + 1; j != this->content.end(); ++j)
             if (abs(*i - *j) < shortest)
                 shortest = abs(*i - *j);
     return shortest;
