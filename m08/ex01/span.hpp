@@ -21,6 +21,7 @@ public:
     Span &operator=(const Span &rhs);
 
     void addNumber(int number);
+    void generate();
     int shortestSpan() const;
     int longestSpan() const;
 };

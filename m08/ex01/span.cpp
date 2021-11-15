@@ -4,6 +4,7 @@ Span::Span() {}
 
 Span::Span(unsigned int n) {
     this->max = n;
+    this->content.reserve(n);
 }
 
 Span::Span(const Span &src) {
@@ -49,4 +50,9 @@ int Span::shortestSpan() const {
             if (abs(*i - *j) < shortest)
                 shortest = abs(*i - *j);
     return shortest;
+}
+
+void Span::generate() {
+    srand(time(0));
+    std::generate_n(std::back_inserter(this->content), this->max, std::rand);
 }
